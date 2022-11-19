@@ -6,9 +6,9 @@
 
 
 ## Using in your project
-> run `npm install --save @kristal/KTWalletRPC`
-> Move or copy `config/walletConf.js.example` to `config/walletConf.js` and edit `config/walletConf.js` to setup the wallet connection parameters.
-> Example usage:
+1. run `npm install --save @kristal/KTWalletRPC`
+2. Move or copy `config/walletConf.js.example` to `config/walletConf.js` and edit `config/walletConf.js` to setup the wallet connection parameters.
+3. Example usage:
     ```javascript
     import KTWalletRPC from 'KTWalletRPC'
 
