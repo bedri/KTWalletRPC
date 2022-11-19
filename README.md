@@ -2,7 +2,7 @@
 
 ## Standalone Installation
 1. Move or copy `config/walletConf.js.example` to `config/walletConf.js`
-2. run `npm install`
+2. Run `npm install`
 
 
 ## Using in your project
