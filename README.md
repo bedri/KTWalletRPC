@@ -12,4 +12,5 @@
     ```javascript
     import KTWalletRPC from 'KTWalletRPC'
 
-    KTWalletRPC.
+    console.log(KTWalletRPC.getInfo())
+    ```
