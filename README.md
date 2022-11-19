@@ -1,5 +1,7 @@
 # Kristal Teknoloji Wallet RPC Library
 
+### Original project is at https://github.com/dashpay/dashd-rpc. 
+### This project is based on @dashday/dashd-rpc and is just a wrapper around the original library. 
 ## Using in your project
 1. Run `npm install @kristal/KTWalletRPC`
 2. Example usage:
