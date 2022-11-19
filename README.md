@@ -1,16 +1,25 @@
 # Kristal Teknoloji Wallet RPC Library
 
-## Standalone Installation
-1. Move or copy `config/walletConf.js.example` to `config/walletConf.js`
-2. Run `npm install`
-
-
 ## Using in your project
-1. Run `npm install --save @kristal/KTWalletRPC`
-2. Move or copy `config/walletConf.js.example` to `config/walletConf.js` and edit `config/walletConf.js` to setup the wallet connection parameters.
-3. Example usage:
+1. Run `npm install @kristal/KTWalletRPC`
+2. Example usage:
     ```javascript
-    import KTWalletRPC from 'KTWalletRPC'
+        var ktWalletRPC = require('@kristal/kt-wallet-rpc')
 
-    console.log(KTWalletRPC.getInfo())
+        // Setting up Kyanite (KYAN) wallet rpc config.
+        // Here the port is the rpcport in the wallet config file.
+        ktWalletRPC.walletConf.KYAN = {
+            protocol: 'http',
+            host: '127.0.0.1',
+            port: 7758,
+            user: 'user',
+            pass: 'pass'
+        }
+
+        var cb = (err, data) => {
+            console.log(data)
+        }
+
+        ktWalletRPC.walletCommands.getInfo('KYAN', cb)
+
     ```

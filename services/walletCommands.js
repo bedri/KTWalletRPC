@@ -1,5 +1,25 @@
-const walletConf = require('../config/walletConf')
 const { RpcClient } = require('./rpc.service')
+const { success, error } = require('../models/ApiResponse')
+
+
+walletConf = {
+    default: {
+        protocol: 'http',
+        host: 'localhost',
+        port: 1111,
+        user: 'user',
+        pass: 'pass'
+    }
+ }
+
+connect = (coin) => {
+    if (!walletConf[coin]) {
+        callback(`${coin} is not supported`)
+        return
+    }
+
+   return new RpcClient(walletConf[coin])
+}
 
 const getBlockHeader = (coin, hash, verbose, callback) => {
 
@@ -8,8 +28,7 @@ const getBlockHeader = (coin, hash, verbose, callback) => {
         return
     }
 
-    new RpcClient(walletConf[coin])
-        .getBlockHeader(hash, verbose || false, callback)
+    connect(coin).getBlockHeader(hash, verbose || false, callback)
 }
 
 const getBlockHash = (coin, blockId, callback) => {
@@ -19,19 +38,16 @@ const getBlockHash = (coin, blockId, callback) => {
         return
     }
 
-    new RpcClient(walletConf[coin])
-        .getBlockHash(+blockId, callback)
+    connect(coin).getBlockHash(+blockId, callback)
 }
 
 const getInfo = (coin, callback) => {
-
     if (!walletConf[coin]) {
         callback(`${coin} is not supported`) 
         return
     }
 
-    new RpcClient(walletConf[coin])
-        .getInfo(callback)
+    connect(coin).getInfo(callback)
 }
 
 const getNewAddress = (coin, callback) => {
@@ -41,11 +57,11 @@ const getNewAddress = (coin, callback) => {
         return
     }
 
-    new RpcClient(walletConf[coin])
-        .getNewAddress(callback)
+    connect(coin).getNewAddress(callback)
 }
 
 module.exports = {
+    walletConf,
     getBlockHash,
     getBlockHeader,
     getInfo,

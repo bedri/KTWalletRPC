@@ -1,0 +1,3 @@
+#!/bin/bash
+
+node example1.js

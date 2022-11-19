@@ -1,13 +1,20 @@
-import KTWalletRPC from './KTWalletRPC'
+const walletCommands = require('./services/walletCommands')
+const apiController = require('./services/api.controller')
 
-exports.default = {
-    KTWalletRPC: KTWalletRPC,
-    ktWalletRPC: KTWalletRPC,
-    walletRPC: KTWalletRPC,
-    ktRPC: KTWalletRPC
+const getInfo = (coin) => {
+    return walletCommands.getInfo(coin)
 }
 
-exports.KTWalletRPC = KTWalletRPC
-exports.ktWalletRPC = KTWalletRPC
-exports.walletRPC = KTWalletRPC
-exports.ktRPC = KTWalletRPC
+var walletConf = walletCommands.walletConf
+
+exports.default = {
+    walletCommands: walletCommands,
+    getInfo: getInfo,
+    walletConf: walletConf
+}
+
+exports.walletCommands = walletCommands
+exports.getInfo = getInfo
+exports.walletConf = walletConf
+
+module.exports = exports

@@ -107,9 +107,6 @@ dist
 
 
 package-lock.json
-wall.sqlite
 config/walletConf.js
-config/serverData.js
-
 kristal-wall-main.zip
 kristal-wall-main/
