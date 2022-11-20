@@ -1,5 +1,5 @@
 const { timeout } = require('async')
-var ktWalletRPC = require('./index')
+var ktWalletRPC = require('@kristal/kt-wallet-rpc')
 
 ktWalletRPC.walletConf.KYAN = {
     protocol: 'http',

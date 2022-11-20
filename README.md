@@ -3,7 +3,7 @@
 ### Original project is at https://github.com/dashpay/dashd-rpc. 
 ### This project is based on @dashday/dashd-rpc and is just a wrapper around the original library. 
 ## Using in your project
-1. Run `npm install @kristal/KTWalletRPC`
+1. Run `npm install @kristal/kt-wallet-rpc`
 2. Example usage:
     ```javascript
         var ktWalletRPC = require('@kristal/kt-wallet-rpc')
